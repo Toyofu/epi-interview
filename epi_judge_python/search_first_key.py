@@ -5,20 +5,19 @@ from test_framework import generic_test
 
 def search_first_of_k(A: List[int], k: int) -> int:
     
-    left, right = 0, len(A) - 1
+    left, right, result = 0, len(A) - 1, -1
 
     while left <= right:
         middle = left + (right-left) // 2
         if A[middle] == k:
-            while middle > 0 and A[middle-1] == k:
-                middle -= 1
-            return middle
+            result = middle
+            right = middle - 1
         elif A[middle] < k:
             left = middle + 1
         else:
             right = middle - 1
 
-    return -1
+    return result
 
 
 if __name__ == '__main__':

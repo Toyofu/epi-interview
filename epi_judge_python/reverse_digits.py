@@ -15,7 +15,6 @@ def reverse(x: int) -> int:
     
     return reversedX if not negative else -1 * reversedX
 
-
 if __name__ == '__main__':
     exit(
         generic_test.generic_test_main('reverse_digits.py',
